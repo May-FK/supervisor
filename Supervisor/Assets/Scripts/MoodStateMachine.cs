@@ -22,7 +22,7 @@ public class MoodStateMachine : MonoBehaviour
     //On start, the employee's mood is picked at random
     void Start()
     {
-        moodNum = Random.Range(-20,20);
+        moodNum = Random.Range(-10,10);
         
         Debug.Log("Employee's mood number is " + moodNum);
         gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
