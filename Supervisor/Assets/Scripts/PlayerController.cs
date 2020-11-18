@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 	{
 		//adds character controller to script
 		controller = GetComponent<CharacterController>();
-		//hides mouse cursor
+		//hides mouse cursor on screen
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 
