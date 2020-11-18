@@ -7,17 +7,7 @@ public class MoodStateMachine : MonoBehaviour
     //Determines employee mood - higher is happier, lower is angrier
     public int moodNum;
     protected int increment;
-    public GameObject employee;
-
-    //employee mood states
-    protected enum MoodState
-    {
-        Neutral,
-        Cheerful,
-        Annoyed
-    }
-
-    protected MoodState moodState;
+    public GameObject employee;   
 
     //On start, the employee's mood is picked at random
     void Start()
@@ -66,9 +56,7 @@ public class MoodStateMachine : MonoBehaviour
     {
         Debug.Log("Employee feels neutral.");
         gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
-        while (moodState == MoodState.Neutral) {
-            yield return null;
-        }
+        yield return null;
     }
 
     //Employee turns cyan if in cheerful state
@@ -76,9 +64,7 @@ public class MoodStateMachine : MonoBehaviour
     {
         Debug.Log("Employee is feeling cheerful!");
         gameObject.GetComponent<MeshRenderer>().material.color = Color.cyan;
-        while (moodState == MoodState.Cheerful) {
-            yield return null;
-        }
+        yield return null;
     }
 
     //Employee turns red if in annoyed state
@@ -86,9 +72,7 @@ public class MoodStateMachine : MonoBehaviour
     {
         Debug.Log("Employee is feeling annoyed.");
         gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-        while (moodState == MoodState.Annoyed) {
-            yield return null;
-        }
+        yield return null;
     }
     
 }
