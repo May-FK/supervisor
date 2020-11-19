@@ -15,7 +15,7 @@ public class MoodStateMachine : MonoBehaviour
     {
         moodNum = Random.Range(-10,10);
         
-        Debug.Log("Employee's mood number is " + moodNum);
+        Debug.Log(gameObject.name + "'s mood number is " + moodNum);
         gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
     }
 
@@ -58,7 +58,7 @@ public class MoodStateMachine : MonoBehaviour
     //Employee turns yellow if in a neutral state
     public IEnumerator NeutralState()
     {
-        Debug.Log("Employee feels neutral.");
+        Debug.Log(gameObject.name + " is feeling neutral.");
         gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
         yield return null;
     }
@@ -66,7 +66,7 @@ public class MoodStateMachine : MonoBehaviour
     //Employee turns cyan if in cheerful state
     public IEnumerator CheerfulState()
     {
-        Debug.Log("Employee is feeling cheerful!");
+        Debug.Log(gameObject.name + " is feeling cheerful!");
         gameObject.GetComponent<MeshRenderer>().material.color = Color.cyan;
         yield return null;
     }
@@ -74,7 +74,7 @@ public class MoodStateMachine : MonoBehaviour
     //Employee turns red if in annoyed state
     public IEnumerator AnnoyedState() 
     {
-        Debug.Log("Employee is feeling annoyed.");
+        Debug.Log(gameObject.name + " is feeling annoyed.");
         gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
         yield return null;
     }
