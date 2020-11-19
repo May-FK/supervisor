@@ -7,7 +7,8 @@ public class MoodStateMachine : MonoBehaviour
     //Determines employee mood - higher is happier, lower is angrier
     public int moodNum;
     protected int increment;
-    public GameObject employee;   
+    public GameObject employee;
+    public GameObject supervisor;
 
     //On start, the employee's mood is picked at random
     void Start()
@@ -37,17 +38,20 @@ public class MoodStateMachine : MonoBehaviour
             StartCoroutine("NeutralState");
         }
 
-        //Employee moodnum increases by 2 every time the player praises them
+        if (Vector3.Distance(supervisor.transform.position, employee.transform.position) < 5)
+        {
+        //Employee moodnum increases every time the player praises them
         if (Input.GetKeyDown(KeyCode.Q))
         {
             moodNum = moodNum + increment;
         }
 
-        //Employee moodnum decreases by 2 every time the player reprimands them
+        //Employee moodnum decreases every time the player reprimands them
         if (Input.GetKeyDown(KeyCode.E))
 
         {
             moodNum = moodNum - increment;
+        }
         }
     }
 
