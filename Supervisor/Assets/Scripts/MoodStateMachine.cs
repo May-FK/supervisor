@@ -6,6 +6,7 @@ public class MoodStateMachine : MonoBehaviour
 {
     //Determines employee mood - higher is happier, lower is angrier
     public int moodNum;
+    protected int increment;
     public GameObject employee;
 
     //employee mood states
@@ -22,12 +23,15 @@ public class MoodStateMachine : MonoBehaviour
     void Start()
     {
         moodNum = Random.Range(-20,20);
+        
         Debug.Log("Employee's mood number is " + moodNum);
         gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
     }
 
     void Update()
     {
+        increment = Random.Range(1,5);
+        
         if (moodNum >= 5)
         {
             StartCoroutine("CheerfulState");
@@ -46,14 +50,14 @@ public class MoodStateMachine : MonoBehaviour
         //Employee moodnum increases by 2 every time the player praises them
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            moodNum = moodNum + 2;
+            moodNum = moodNum + increment;
         }
 
         //Employee moodnum decreases by 2 every time the player reprimands them
         if (Input.GetKeyDown(KeyCode.E))
 
         {
-            moodNum = moodNum - 2;
+            moodNum = moodNum - increment;
         }
     }
 
