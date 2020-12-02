@@ -40,18 +40,18 @@ public class MoodStateMachine : MonoBehaviour
 
         if (Vector3.Distance(supervisor.transform.position, employee.transform.position) < 5)
         {
-        //Employee moodnum increases every time the player praises them
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            moodNum = moodNum + increment;
-        }
+            //Employee moodnum increases every time the player praises them
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                moodNum = moodNum + increment;
+            }
 
-        //Employee moodnum decreases every time the player reprimands them
-        if (Input.GetKeyDown(KeyCode.E))
+            //Employee moodnum decreases every time the player reprimands them
+            if (Input.GetKeyDown(KeyCode.E))
 
-        {
-            moodNum = moodNum - increment;
-        }
+            {
+                moodNum = moodNum - increment;
+            }
         }
     }
 
@@ -67,7 +67,7 @@ public class MoodStateMachine : MonoBehaviour
     public IEnumerator CheerfulState()
     {
         Debug.Log(gameObject.name + " is feeling cheerful!");
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.cyan;
+        //gameObject.GetComponent<MeshRenderer>().material.color = Color.cyan;
         yield return null;
     }
 
@@ -75,7 +75,7 @@ public class MoodStateMachine : MonoBehaviour
     public IEnumerator AnnoyedState() 
     {
         Debug.Log(gameObject.name + " is feeling annoyed.");
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        //gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
         yield return null;
     }
     
