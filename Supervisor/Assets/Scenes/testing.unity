@@ -1103,7 +1103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c1bb989cbb34f50b14f8b6162759d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moodNum: 0
   employees:
   - {fileID: 305970315}
   - {fileID: 2093309036}
@@ -1113,6 +1112,7 @@ MonoBehaviour:
   - {fileID: 525721216}
   - {fileID: 82966832}
   - {fileID: 2000061998}
+  supervisor: {fileID: 168134107}
   scoreDisplay: {fileID: 1995038625}
 --- !u!1 &338340057
 GameObject:
@@ -3106,7 +3106,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172561090}
-  m_LocalRotation: {x: 0.11424551, y: -0.43497002, z: 0.05574535, w: 0.8914267}
+  m_LocalRotation: {x: 0.11424551, y: -0.43497, z: 0.055745345, w: 0.8914267}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4751,7 +4751,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: 'Score: '
 --- !u!222 &1995038626
 CanvasRenderer:
   m_ObjectHideFlags: 0
