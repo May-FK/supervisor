@@ -9,6 +9,7 @@ public class MoodStateMachine : MonoBehaviour
     protected int increment;
     public GameObject employee;
     public GameObject supervisor;
+    public GameObject moodSphere;
 
     //On start, the employee's mood is picked at random
     void Start()
@@ -59,7 +60,7 @@ public class MoodStateMachine : MonoBehaviour
     public IEnumerator NeutralState()
     {
         Debug.Log(gameObject.name + " is feeling neutral.");
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
+        moodSphere.GetComponent<MeshRenderer>().material.color = Color.yellow;
         yield return null;
     }
 
@@ -67,7 +68,7 @@ public class MoodStateMachine : MonoBehaviour
     public IEnumerator CheerfulState()
     {
         Debug.Log(gameObject.name + " is feeling cheerful!");
-        //gameObject.GetComponent<MeshRenderer>().material.color = Color.cyan;
+        moodSphere.GetComponent<MeshRenderer>().material.color = Color.cyan;
         yield return null;
     }
 
@@ -75,7 +76,7 @@ public class MoodStateMachine : MonoBehaviour
     public IEnumerator AnnoyedState() 
     {
         Debug.Log(gameObject.name + " is feeling annoyed.");
-        //gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        moodSphere.GetComponent<MeshRenderer>().material.color = Color.red;
         yield return null;
     }
     
