@@ -52,7 +52,7 @@ public class Score : MonoBehaviour
                 if (employeeColor == Color.cyan)
                 {
                     Debug.Log("Score is increasing based on productivity.");
-                    currentScore = currentScore + 0.02f;
+                    currentScore = currentScore + 0.03f;
                     Debug.Log(currentScore);
                 }
                 
