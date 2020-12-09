@@ -28,9 +28,9 @@ public class Score : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
         //rounds the float to an integer so the score can only be whole numbers
-        scoreDisplay.text = currentScore.ToString("Score: " + Mathf.RoundToInt(currentScore));
+        scoreDisplay.text = "Score: " + Mathf.RoundToInt(currentScore);  //currentScore.ToString("Score: " + Mathf.RoundToInt(currentScore));
         
         EmployeeProductivity();
         
