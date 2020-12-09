@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Score : MonoBehaviour
     [SerializeField]
     Text scoreDisplay;
     private Color employeeColor;
+    [SerializeField]
+    public string sceneName;
+    //public Text ScoreText;
     
 
     void Start()
@@ -35,6 +39,18 @@ public class Score : MonoBehaviour
         {
             currentScore = 0f;
         }
+
+        if (currentScore >= 125f)
+        {
+            Congrats();
+        }
+    }
+
+    void Congrats()
+    {
+        SceneManager.LoadScene(sceneName);
+        //ScoreText.text = "You Win";
+        //Time.timeScale = 0f;
     }
 
     void EmployeeProductivity()
