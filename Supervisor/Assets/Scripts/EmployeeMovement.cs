@@ -14,24 +14,23 @@ public class EmployeeMovement : MonoBehaviour
     private bool isRotatingLeft = false;
     private bool isMoving = false;
 
-    // Update is called once per frame
     void Update()
     {
        if (isMoving == false)
         {
             StartCoroutine(Movement());
         } 
-
+       //Rotation to the left
        if (isRotatingLeft == true)
         {
             transform.Rotate(transform.up * Time.deltaTime * rotationSpeed);
         }
-
+       //rotation to the right
         if (isRotatingRight == true)
         {
             transform.Rotate(transform.up * Time.deltaTime * -rotationSpeed);
         }
-
+        //employees are moving
         if (isWalking == true)
         {
             transform.position += transform.forward * Speed * Time.deltaTime;
@@ -42,14 +41,15 @@ public class EmployeeMovement : MonoBehaviour
 
     IEnumerator Movement()
     {
-        int rotationTime = Random.Range(1, 4);
-        int rotateWait = Random.Range(1, 5);
-        int rotateRorL = Random.Range(1, 5);
-        int walkWait = Random.Range(1, 5);
+        //Intervals of time between walking, waiting, and rotating
+        int rotationTime = Random.Range(1, 3);
+        int rotateWait = Random.Range(1, 2);
+        int rotateRorL = Random.Range(1, 3);
+        int walkWait = Random.Range(1, 3);
         int walkTime = Random.Range(1, 6);
 
         isMoving = true;
-
+        //based on the range number, determines how long each employee has to move & rotate
         yield return new WaitForSeconds(walkWait);
         isWalking = true;
         yield return new WaitForSeconds(walkTime);
@@ -58,6 +58,8 @@ public class EmployeeMovement : MonoBehaviour
         
         if(rotateRorL == 1)
         {
+            //when walking forward there is no rotation
+            //stops employees from constantly rotating
             isRotatingLeft = true;
             yield return new WaitForSeconds(rotationTime);
             isRotatingRight = false;
@@ -69,7 +71,7 @@ public class EmployeeMovement : MonoBehaviour
             yield return new WaitForSeconds(rotationTime);
             isRotatingLeft = false;
         }
-
+        //restarts the couroutine over again
         isMoving = false;
 
     }
