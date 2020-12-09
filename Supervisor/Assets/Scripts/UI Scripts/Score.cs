@@ -65,7 +65,7 @@ public class Score : MonoBehaviour
             if (Vector3.Distance(supervisor.transform.position, employee.transform.position) < 5)
             {
                 //score increases if employee is cheerful
-                if (employeeColor == Color.cyan)
+                if (employeeColor == Color.green)
                 {
                     Debug.Log("Score is increasing based on productivity.");
                     currentScore = currentScore + 0.03f;
@@ -73,7 +73,7 @@ public class Score : MonoBehaviour
                 }
                 
                 //score decreases if employee is annoyed
-                else if (employeeColor == Color.red)
+                else if (employeeColor == Color.magenta)
                 {
                     Debug.Log("Score is decreasing based on productivity.");
                     currentScore = currentScore - 0.03f;

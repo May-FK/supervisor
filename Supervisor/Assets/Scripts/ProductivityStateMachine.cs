@@ -42,7 +42,7 @@ public class ProductivityStateMachine : MonoBehaviour
     public IEnumerator ProductiveState()
     {
         Debug.Log("Employee is being Productive.");
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.cyan;
+        gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
         DistractedTimer();
         //gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
         yield return null;
@@ -53,7 +53,7 @@ public class ProductivityStateMachine : MonoBehaviour
     {
         Debug.Log("Employee is distracted");
         Interact();
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        gameObject.GetComponent<MeshRenderer>().material.color = Color.magenta;
         // gameObject.GetComponent<MeshRenderer>().material.color = Color.cyan;
         yield return null;
     }
